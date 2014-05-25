@@ -6,8 +6,8 @@ function calculate(){
     document.getElementById('letters').innerHTML = '';
 
     // count how many times each letter appears in inputted text
-    for(i = 0; i < 26; i++){
-        var letter = String.fromCharCode(97 + i);
+    for(var loop_counter = 0; loop_counter < 26; loop_counter++){
+        var letter = String.fromCharCode(97 + loop_counter);
 
         var letter_count = document.getElementById('text').value.replace(
           new RegExp(
