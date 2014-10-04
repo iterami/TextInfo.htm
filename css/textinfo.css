@@ -1,4 +1,11 @@
+body,
+input{
+    background: #000;
+    color: #aaa;
+}
 textarea{
+    background: #000;
+    color: #aaa;
     height: 230px;
     width: 420px;
 }
