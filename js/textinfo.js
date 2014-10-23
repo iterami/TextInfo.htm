@@ -1,23 +1,23 @@
 function calculate(){
-    // fetch and display length of inputted text
+    // Fetch and display length of inputted text.
     document.getElementById('length').innerHTML = document.getElementById('text').value.length;
 
-    // reset letters
+    // Reset letters.
     document.getElementById('letters').innerHTML = '';
 
-    // count how many times each letter appears in inputted text
+    // Count how many times each letter appears in inputted text.
     for(var loop_counter = 0; loop_counter < 26; loop_counter++){
         var letter = String.fromCharCode(97 + loop_counter);
 
         var letter_count = document.getElementById('text').value.replace(
           new RegExp(
             '[^' + letter + ']',
-            'g'
+            'g'// Global
           ),
           ''
         ).length;
 
-        // only display letters that appear in inputted text
+        // Only display letters that appear in inputted text.
         if(letter_count > 0){
             document.getElementById('letters').innerHTML +=
               letter
