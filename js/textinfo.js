@@ -19,16 +19,18 @@ function calculate(){
         ).length;
 
         // Only display letters that appear in inputted text.
-        if(letter_count > 0){
-            output +=
-              '<tr><td>'
-              + letter
-              + '</td><td>'
-              + letter_count
-              + '</td><td>'
-              + ((letter_count / document.getElementById('text').value.length) * 100).toFixed(2)
-              + '%</td></tr>';
+        if(letter_count <= 0){
+            continue;
         }
+
+        output +=
+          '<tr><td>'
+          + letter
+          + '</td><td>'
+          + letter_count
+          + '</td><td>'
+          + ((letter_count / document.getElementById('text').value.length) * 100).toFixed(2)
+          + '%</td></tr>';
     }
 
     document.getElementById('letters').innerHTML = output;
