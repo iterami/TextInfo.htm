@@ -15,6 +15,9 @@ input{
     background: #000;
     color: #aaa;
 }
+input[type=button]{
+    cursor: pointer;
+}
 table{
     border-collapse: collapse;
 }
