@@ -1,3 +1,5 @@
+'use strict';
+
 function calculate(){
     // Fetch and display length of inputted text.
     document.getElementById('length').innerHTML = document.getElementById('text').value.length;
