@@ -1,8 +1,8 @@
 'use strict';
 
-function calculate(){
+document.getElementById('text').oninput = function(){
     // Fetch and display length of inputted text.
-    document.getElementById('length').innerHTML = document.getElementById('text').value.length;
+    document.getElementById('length').innerHTML = this.value.length;
 
     // Reset letters.
     document.getElementById('letters').innerHTML = '';
@@ -12,7 +12,7 @@ function calculate(){
     for(var loop_counter = 0; loop_counter < 26; loop_counter++){
         var letter = String.fromCharCode(97 + loop_counter);
 
-        var letter_count = document.getElementById('text').value.replace(
+        var letter_count = this.value.replace(
           new RegExp(
             '[^' + letter + ']',
             'g'// Global
@@ -31,9 +31,9 @@ function calculate(){
           + '</td><td>'
           + letter_count
           + '</td><td>'
-          + ((letter_count / document.getElementById('text').value.length) * 100).toFixed(2)
+          + ((letter_count / this.value.length) * 100).toFixed(2)
           + '%</td></tr>';
     }
 
     document.getElementById('letters').innerHTML = output;
-}
+};
