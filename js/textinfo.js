@@ -1,20 +1,22 @@
 'use strict';
 
 document.getElementById('text').oninput = function(){
-    // Fetch and display length of inputted text.
-    document.getElementById('length').innerHTML = this.value.length;
+    // Fetch lowercase value.
+    var value = this.value.toLowerCase();
+
+    // Display length of inputted text.
+    document.getElementById('length').innerHTML = value.length;
 
     // Reset letters.
     document.getElementById('letters').innerHTML = '';
+    var letters = 'abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
     var output = '';
 
     // Count how many times each letter appears in inputted text.
-    for(var loop_counter = 0; loop_counter < 26; loop_counter++){
-        var letter = String.fromCharCode(97 + loop_counter);
-
-        var letter_count = this.value.replace(
+    for(var letter in letters){
+        var letter_count = value.replace(
           new RegExp(
-            '[^' + letter + ']',
+            '[^' + letters[letter] + ']',
             'g'// Global
           ),
           ''
@@ -27,11 +29,11 @@ document.getElementById('text').oninput = function(){
 
         output +=
           '<tr><td>'
-          + letter
+          + letters[letter]
           + '</td><td>'
           + letter_count
           + '</td><td>'
-          + ((letter_count / this.value.length) * 100).toFixed(2)
+          + ((letter_count / value.length) * 100).toFixed(2)
           + '%</td></tr>';
     }
 
