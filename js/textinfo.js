@@ -7,35 +7,35 @@ document.getElementById('text').oninput = function(){
     // Display length of inputted text.
     document.getElementById('length').innerHTML = value.length;
 
-    // Reset letters.
-    document.getElementById('letters').innerHTML = '';
-    var letters = 'abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
+    // Reset characters.
+    document.getElementById('characters').innerHTML = '';
+    var characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
     var output = '';
 
-    // Count how many times each letter appears in inputted text.
-    for(var letter in letters){
-        var letter_count = value.replace(
+    // Count how many times each character appears in inputted text.
+    for(var character in characters){
+        var character_count = value.replace(
           new RegExp(
-            '[^' + letters[letter] + ']',
+            '[^' + characters[character] + ']',
             'g'// Global
           ),
           ''
         ).length;
 
-        // Only display letters that appear in inputted text.
-        if(letter_count <= 0){
+        // Only display characters that appear in inputted text.
+        if(character_count <= 0){
             continue;
         }
 
         output +=
           '<tr><td>'
-          + letters[letter]
+          + characters[character]
           + '</td><td>'
-          + letter_count
+          + character_count
           + '</td><td>'
-          + ((letter_count / value.length) * 100).toFixed(2)
+          + ((character_count / value.length) * 100).toFixed(2)
           + '%</td></tr>';
     }
 
-    document.getElementById('letters').innerHTML = output;
+    document.getElementById('characters').innerHTML = output;
 };
