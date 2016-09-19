@@ -1,5 +1,43 @@
 'use strict';
 
+function fetch_keyinfo(key){
+    settings_save();
+
+    document.getElementById('key-single').innerHTML =
+      '<span class=medium>'
+        + key
+        + '</span><br>CharCode: '
+        + key.charCodeAt(0);
+}
+
+function fetch_keyinfo_key(){
+    fetch_keyinfo(document.getElementById('key').value);
+}
+
+function fetch_keyinfo_keycode(){
+    fetch_keyinfo(String.fromCharCode(document.getElementById('keycode').value));
+}
+
+function generate_list(){
+    settings_save();
+
+    var loop_counter = settings_settings['keycode-range'] - 1;
+    if(loop_counter < 0){
+        return;
+    }
+
+    var temp = [];
+    do{
+        temp.splice(
+          0,
+          0,
+          '<a onclick="fetch_keyinfo(this.innerHTML)">' + String.fromCharCode(settings_settings['base-keycode'] + loop_counter) + '</a>'
+        );
+    }while(loop_counter--);
+
+    document.getElementById('key-list').innerHTML = temp.join(' ');
+}
+
 document.getElementById('text').oninput = function(){
     // Fetch lowercase value.
     var value = this.value.toLowerCase();
@@ -38,4 +76,18 @@ document.getElementById('text').oninput = function(){
     }
 
     document.getElementById('characters').innerHTML = output;
+};
+
+window.onload = function(e){
+    settings_init(
+      'KeyInfo.htm-',
+      {
+        'base-keycode': 0,
+        'key': 'H',
+        'keycode': 72,
+        'keycode-range': 1000,
+      }
+    );
+
+    settings_update();
 };

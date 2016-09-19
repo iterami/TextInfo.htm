@@ -4,10 +4,25 @@
 <title>TextInfo.htm</title>
 <link href=../common/css/dom.css rel=stylesheet>
 
+<input onclick=settings_reset() type=button value=Reset>
+<hr>
+<input id=key maxlength=1>
+<input onclick=fetch_keyinfo_key() type=button value="Key [H]">
+or
+<input id=keycode>
+<input onclick=fetch_keyinfo_keycode() type=button value="KeyCode [J]"><br>
+<div id=key-single></div>
+<hr>
 <textarea id=text></textarea>
 <div>
     Length: <span id=length></span><br>
     <table id=characters></table>
 </div>
+<hr>
+<input id=base-keycode>
+<input id=keycode-range>
+<input onclick=generate_list() type=button value="Generate [G]"><br>
+<div class=nounderline id=key-list></div>
 
+<script src=../common/js/settings.js></script>
 <script src=js/textinfo.js></script>
