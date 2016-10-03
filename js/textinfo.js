@@ -90,4 +90,9 @@ window.onload = function(e){
     );
 
     settings_update();
+
+    document.getElementById('fetch-keyinfo-key').onclick = fetch_keyinfo_key;
+    document.getElementById('fetch-keyinfo-keycode').onclick = fetch_keyinfo_keycode;
+    document.getElementById('generate').onclick = generate_list;
+    document.getElementById('settings-reset').onclick = settings_reset;
 };
