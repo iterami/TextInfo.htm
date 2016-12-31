@@ -79,15 +79,15 @@ document.getElementById('text').oninput = function(){
 };
 
 window.onload = function(e){
-    settings_init(
-      'KeyInfo.htm-',
-      {
+    settings_init({
+      'prefix': 'KeyInfo.htm-',
+      'settings': {
         'base-keycode': 0,
         'key': 'H',
         'keycode': 72,
         'keycode-range': 1000,
-      }
-    );
+      },
+    });
 
     settings_update();
 
