@@ -91,7 +91,7 @@ window.onload = function(e){
               + '</td><td>'
               + character_count
               + '</td><td>'
-              + ((character_count / value.length) * 100).toFixed(2)
+              + ((character_count / value.length) * 100).toFixed(7)
               + '%</td></tr>';
         }
 
