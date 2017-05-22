@@ -1,7 +1,7 @@
 'use strict';
 
 function fetch_keyinfo(key){
-    storage_save();
+    core_storage_save();
 
     document.getElementById('key-single').innerHTML =
       '<span class=medium>'
@@ -19,9 +19,9 @@ function fetch_keyinfo_keycode(){
 }
 
 function generate_list(){
-    storage_save();
+    core_storage_save();
 
-    var loop_counter = storage_data['keycode-range'] - 1;
+    var loop_counter = core_storage_data['keycode-range'] - 1;
     if(loop_counter < 0){
         return;
     }
@@ -31,7 +31,7 @@ function generate_list(){
         temp.splice(
           0,
           0,
-          '<a onclick="fetch_keyinfo(this.innerHTML)">' + String.fromCharCode(storage_data['base-keycode'] + loop_counter) + '</a>'
+          '<a onclick="fetch_keyinfo(this.innerHTML)">' + String.fromCharCode(core_storage_data['base-keycode'] + loop_counter) + '</a>'
         );
     }while(loop_counter--);
 
@@ -39,7 +39,7 @@ function generate_list(){
 }
 
 window.onload = function(e){
-    storage_init({
+    core_storage_init({
       'data': {
         'base-keycode': 0,
         'key': 'H',
@@ -49,13 +49,13 @@ window.onload = function(e){
       'prefix': 'KeyInfo.htm-',
     });
 
-    storage_update();
+    core_storage_update();
 
     document.getElementById('fetch-keyinfo-key').onclick = fetch_keyinfo_key;
     document.getElementById('fetch-keyinfo-keycode').onclick = fetch_keyinfo_keycode;
     document.getElementById('generate').onclick = generate_list;
     document.getElementById('storage-reset').onclick = function(e){
-        storage_reset();
+        core_storage_reset();
     }
 
     document.getElementById('text').oninput = function(){
