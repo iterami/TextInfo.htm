@@ -38,7 +38,7 @@ function generate_list(){
     document.getElementById('key-list').innerHTML = temp.join(' ');
 }
 
-window.onload = function(e){
+function repo_init(){
     core_storage_init({
       'data': {
         'base-keycode': 0,
@@ -97,4 +97,4 @@ window.onload = function(e){
 
         document.getElementById('characters').innerHTML = output;
     };
-};
+}
