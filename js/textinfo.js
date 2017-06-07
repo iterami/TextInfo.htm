@@ -39,14 +39,14 @@ function generate_list(){
 }
 
 function repo_init(){
-    core_storage_init({
-      'data': {
+    core_repo_init({
+      'storage': {
         'base-keycode': 0,
         'key': 'H',
         'keycode': 72,
         'keycode-range': 1000,
       },
-      'prefix': 'KeyInfo.htm-',
+      'title': 'KeyInfo.htm',
     });
 
     core_storage_update();
