@@ -54,9 +54,6 @@ function repo_init(){
     document.getElementById('fetch-keyinfo-key').onclick = fetch_keyinfo_key;
     document.getElementById('fetch-keyinfo-keycode').onclick = fetch_keyinfo_keycode;
     document.getElementById('generate').onclick = generate_list;
-    document.getElementById('storage-reset').onclick = function(e){
-        core_storage_reset();
-    }
 
     document.getElementById('text').oninput = function(){
         // Fetch lowercase value.
