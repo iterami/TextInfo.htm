@@ -31,7 +31,7 @@ function generate_list(){
         temp.splice(
           0,
           0,
-          '<a onclick="fetch_keyinfo(this.innerHTML)">' + String.fromCharCode(core_storage_data['base-keycode'] + loop_counter) + '</a>'
+          '<a onclick="fetch_keyinfo(this.innerHTML)" style="border:1px solid #aaa;display:inline-block;height:1em;width:25px">' + String.fromCharCode(core_storage_data['base-keycode'] + loop_counter) + '</a>'
         );
     }while(loop_counter--);
 
