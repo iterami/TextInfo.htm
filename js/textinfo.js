@@ -6,7 +6,7 @@ function fetch_keyinfo(key){
     document.getElementById('key-single').innerHTML =
       '<span class=medium>'
         + key
-        + '</span><br>CharCode: '
+        + '</span><br>KeyCode: '
         + key.charCodeAt(0);
 }
 
