@@ -2,6 +2,17 @@
 
 function repo_init(){
     core_repo_init({
+      'info-events': {
+        'fetch-keyinfo-key': {
+          'todo': fetch_keyinfo_key,
+        },
+        'fetch-keyinfo-keycode': {
+          'todo': fetch_keyinfo_keycode,
+        },
+        'generate': {
+          'todo': generate_list,
+        },
+      },
       'storage': {
         'base-keycode': 0,
         'key': 'H',
@@ -10,12 +21,6 @@ function repo_init(){
       },
       'title': 'KeyInfo.htm',
     });
-
-    core_storage_update();
-
-    document.getElementById('fetch-keyinfo-key').onclick = fetch_keyinfo_key;
-    document.getElementById('fetch-keyinfo-keycode').onclick = fetch_keyinfo_keycode;
-    document.getElementById('generate').onclick = generate_list;
 
     document.getElementById('text').oninput = function(){
         // Fetch lowercase value.
