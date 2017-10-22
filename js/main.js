@@ -30,8 +30,6 @@ function repo_init(){
         document.getElementById('length').innerHTML = value.length;
 
         // Reset characters.
-        var element = document.getElementById('characters');
-        element.innerHTML = '';
         var characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
         var output = '';
 
@@ -60,6 +58,11 @@ function repo_init(){
               + '%</td></tr>';
         }
 
-        element.innerHTML = output;
+        core_html_modify({
+          'id': 'characters',
+          'properties': {
+            'innerHTML': output,
+          },
+        });
     };
 }
