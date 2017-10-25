@@ -2,15 +2,15 @@
 
 function repo_init(){
     core_repo_init({
-      'info-events': {
+      'events': {
         'fetch-keyinfo-key': {
-          'todo': fetch_keyinfo_key,
+          'onclick': fetch_keyinfo_key,
         },
         'fetch-keyinfo-keycode': {
-          'todo': fetch_keyinfo_keycode,
+          'onclick': fetch_keyinfo_keycode,
         },
         'generate': {
-          'todo': generate_list,
+          'onclick': generate_list,
         },
       },
       'storage': {
