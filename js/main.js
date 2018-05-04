@@ -20,6 +20,9 @@ function repo_init(){
               // Display length of inputted text.
               document.getElementById('length').innerHTML = value.length;
 
+              // Display line count.
+              document.getElementById('lines').innerHTML = value.split(/\n/).length;
+
               // Reset characters.
               var characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
               var output = '';
