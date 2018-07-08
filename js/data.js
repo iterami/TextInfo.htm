@@ -21,12 +21,12 @@ function fetch_keyinfo_keycode(){
 function generate_list(){
     core_storage_save();
 
-    var loop_counter = core_storage_data['keycode-range'] - 1;
+    let loop_counter = core_storage_data['keycode-range'] - 1;
     if(loop_counter < 0){
         return;
     }
 
-    var temp = [];
+    let temp = [];
     do{
         temp.splice(
           0,
