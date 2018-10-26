@@ -4,23 +4,25 @@
 <title>TextInfo.htm</title>
 <link href=../common/css/core.css rel=stylesheet>
 
-<input id=key maxlength=1>
-<input id=fetch-keyinfo-key type=button value=Key>
-or
-<input id=keycode>
-<input id=fetch-keyinfo-keycode type=button value=KeyCode><br>
+
+
 <div id=key-single></div>
-<hr>
-<textarea id=text></textarea>
-<div>
-    Length: <span id=length></span><br>
-    Lines: <span id=lines></span><br>
-    <table id=characters></table>
-</div>
-<hr>
-<input id=base-keycode>
-<input id=keycode-range>
-<input id=generate type=button value=Generate><br>
+<table>
+  <tr>
+    <td><input id=key maxlength=1>
+    <td><input id=fetch-keyinfo-key type=button value=Key>
+  <tr>
+    <td><input id=keycode>
+    <td><input id=fetch-keyinfo-keycode type=button value=KeyCode>
+  <tr>
+    <td><textarea id=text></textarea>
+    <td>Length: <span id=length></span><br>
+      Lines: <span id=lines></span><br>
+      <table id=characters></table>
+  <tr>
+    <td><input id=base-keycode><input id=keycode-range>
+    <td><input id=generate type=button value=Generate>
+</table>
 <div class="medium nounderline" id=key-list></div>
 
 <script src=../common/js/core.js></script>
