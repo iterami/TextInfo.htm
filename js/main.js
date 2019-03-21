@@ -48,8 +48,9 @@ function repo_init(){
                     + '</td><td>'
                     + character_count
                     + '</td><td>'
-                    + ((character_count / value.length) * 100).toFixed(7)
-                    + '%</td></tr>';
+                    + core_round({
+                      'number': (character_count / value.length) * 100,
+                    }) + '%</td></tr>';
               }
 
               core_html_modify({
