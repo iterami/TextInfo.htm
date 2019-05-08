@@ -4,7 +4,9 @@ function repo_init(){
     core_repo_init({
       'events': {
         'fetch-keyinfo-key': {
-          'onclick': fetch_keyinfo_key,
+          'onclick': function(){
+              fetch_keyinfo(document.getElementById('key').value);
+          },
         },
         'fetch-keyinfo-keycode': {
           'onclick': fetch_keyinfo_keycode,

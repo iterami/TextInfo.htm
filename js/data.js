@@ -10,10 +10,6 @@ function fetch_keyinfo(key){
         + key.charCodeAt(0);
 }
 
-function fetch_keyinfo_key(){
-    fetch_keyinfo(document.getElementById('key').value);
-}
-
 function fetch_keyinfo_keycode(){
     fetch_keyinfo(String.fromCharCode(document.getElementById('keycode').value));
 }
