@@ -9,7 +9,9 @@ function repo_init(){
           },
         },
         'fetch-keyinfo-keycode': {
-          'onclick': fetch_keyinfo_keycode,
+          'onclick': function(){
+              fetch_keyinfo_keycode(document.getElementById('keycode').value);
+          },
         },
         'generate': {
           'onclick': generate_list,
