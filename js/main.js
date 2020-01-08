@@ -22,10 +22,10 @@ function repo_init(){
               let value = this.value.toLowerCase();
 
               // Display length of inputted text.
-              document.getElementById('length').innerHTML = value.length;
+              document.getElementById('length').textContent = value.length;
 
               // Display line count.
-              document.getElementById('lines').innerHTML = value.split(/\n/).length;
+              document.getElementById('lines').textContent = value.split(/\n/).length;
 
               // Reset characters.
               let characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
