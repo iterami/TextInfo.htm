@@ -22,10 +22,10 @@ function generate_list(){
         return;
     }
 
-    let temp = [];
+    const temp = [];
     do{
-        let code = core_storage_data['base-keycode'] + loop_counter;
-        let char = String.fromCharCode(code);
+        const code = core_storage_data['base-keycode'] + loop_counter;
+        const char = String.fromCharCode(code);
 
         temp.splice(
           0,

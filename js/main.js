@@ -19,7 +19,7 @@ function repo_init(){
         'text': {
           'oninput': function(){
               // Fetch lowercase value.
-              let value = this.value.toLowerCase();
+              const value = this.value.toLowerCase();
 
               // Display length of inputted text.
               document.getElementById('length').textContent = value.length;
@@ -28,12 +28,12 @@ function repo_init(){
               document.getElementById('lines').textContent = value.split(/\n/).length;
 
               // Reset characters.
-              let characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
+              const characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
               let output = '';
 
               // Count how many times each character appears in inputted text.
-              for(let character in characters){
-                  let character_count = value.replace(
+              for(const character in characters){
+                  const character_count = value.replace(
                     new RegExp(
                       '[^' + characters[character] + ']',
                       'g'// Global
