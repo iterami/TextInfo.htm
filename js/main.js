@@ -18,30 +18,21 @@ function repo_init(){
         },
         'text': {
           'oninput': function(){
-              // Fetch lowercase value.
               const value = this.value.toLowerCase();
-
-              // Display length of inputted text.
               document.getElementById('length').textContent = value.length;
-
-              // Display line count.
               document.getElementById('lines').textContent = value.split(/\n/).length;
 
-              // Reset characters.
               const characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
               let output = '';
-
-              // Count how many times each character appears in inputted text.
               for(const character in characters){
                   const character_count = value.replace(
                     new RegExp(
                       '[^' + characters[character] + ']',
-                      'g'// Global
+                      'g'
                     ),
                     ''
                   ).length;
 
-                  // Only display characters that appear in inputted text.
                   if(character_count <= 0){
                       continue;
                   }
@@ -70,7 +61,7 @@ function repo_init(){
         'base-keycode': 0,
         'key': 'H',
         'keycode': 72,
-        'keycode-range': 1000,
+        'keycode-range': 100,
       },
       'title': 'TextInfo.htm',
     });
