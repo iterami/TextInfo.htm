@@ -80,9 +80,8 @@ function repo_init(){
                     + '</td><td>'
                     + character_count
                     + '</td><td>'
-                    + core_round({
-                      'number': (character_count / value.length) * 100,
-                    }) + '%</td></tr>';
+                    + (character_count / value.length) * 100
+                    + '%</td></tr>';
               }
 
               core_html_modify({
