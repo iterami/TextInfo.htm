@@ -3,7 +3,7 @@
 function fetch_keyinfo(key){
     core_storage_save();
 
-    document.getElementById('key-single').innerHTML =
+    core_elements['key_single'].innerHTML =
       '<span class=medium>'
         + key
         + '</span><br>KeyCode: '
@@ -34,7 +34,7 @@ function generate_list(){
         );
     }while(loop_counter--);
 
-    document.getElementById('key-list').innerHTML = temp.join(' ');
+    core_elements['key-list'].innerHTML = temp.join(' ');
 }
 
 function repo_init(){
@@ -42,12 +42,12 @@ function repo_init(){
       'events': {
         'fetch-keyinfo-key': {
           'onclick': function(){
-              fetch_keyinfo(document.getElementById('key').value);
+              fetch_keyinfo(core_elements['key'].value);
           },
         },
         'fetch-keyinfo-keycode': {
           'onclick': function(){
-              fetch_keyinfo_keycode(document.getElementById('keycode').value);
+              fetch_keyinfo_keycode(core_elements['keycode'].value);
           },
         },
         'generate': {
@@ -56,8 +56,8 @@ function repo_init(){
         'text': {
           'oninput': function(){
               const value = this.value.toLowerCase();
-              document.getElementById('length').textContent = value.length;
-              document.getElementById('lines').textContent = value.split(/\n/).length;
+              core_elements['length'].textContent = value.length;
+              core_elements['lines'].textContent = value.split(/\n/).length;
 
               const characters = '0123456789abcdefghijklmnopqrstuvwxyz !@#$%^&*()_-+={}|:;"\'<,>.?/'.split('');
               let output = '';
@@ -100,5 +100,13 @@ function repo_init(){
         'keycode-range': 100,
       },
       'title': 'TextInfo.htm',
+      'ui-elements': [
+        'key',
+        'keycode',
+        'key-list',
+        'key-single',
+        'length',
+        'lines',
+      ],
     });
 }
