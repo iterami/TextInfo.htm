@@ -22,19 +22,19 @@ function generate_list(){
         return;
     }
 
-    const temp = [];
+    const keys = [];
     do{
         const code = core_storage_data['base-keycode'] + loop_counter;
         const char = String.fromCharCode(code);
 
-        temp.splice(
+        keys.splice(
           0,
           0,
           '<a href="javascript:fetch_keyinfo_keycode(' + code + ');" style="border:1px solid #aaa;display:inline-block;height:1em;text-decoration:none;width:25px">' + char + '</a>'
         );
     }while(loop_counter--);
 
-    core_elements['key-list'].innerHTML = temp.join(' ');
+    core_elements['key-list'].innerHTML = keys.join(' ');
 }
 
 function repo_init(){
