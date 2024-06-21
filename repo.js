@@ -84,12 +84,7 @@ function repo_init(){
                     + '%</td></tr>';
               }
 
-              core_html_modify({
-                'id': 'characters',
-                'properties': {
-                  'innerHTML': output,
-                },
-              });
+              core_elements['characters'].innerHTML = output;
           },
         },
       },
@@ -101,6 +96,7 @@ function repo_init(){
       },
       'title': 'TextInfo.htm',
       'ui-elements': [
+        'characters',
         'key',
         'keycode',
         'key-list',
