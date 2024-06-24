@@ -3,7 +3,7 @@
 function fetch_keyinfo(key){
     core_storage_save();
 
-    core_elements['key_single'].innerHTML =
+    core_elements['key-single'].innerHTML =
       '<span class=medium>'
         + key
         + '</span><br>KeyCode: '
