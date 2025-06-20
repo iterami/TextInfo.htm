@@ -95,7 +95,7 @@ function repo_init(){
         'key': 'H',
       },
       'title': 'TextInfo.htm',
-      'ui-elements': [
+      'ui_elements': [
         'characters',
         'code',
         'key',
