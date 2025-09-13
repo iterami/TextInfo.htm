@@ -2,12 +2,12 @@
 
 function fetch_keyinfo(key){
     core_storage_save();
+    const code = key.charCodeAt(0);
 
     core_elements.key_single.innerHTML =
-      '<span class=medium>'
-        + key
-        + '</span><br>Code: '
-        + key.charCodeAt(0);
+      '<span class=medium>' + key + '</span>'
+        + '<br>Code: ' + code
+        + '<br>Hex: ' + code.toString(16).toUpperCase();
 }
 
 function fetch_keyinfo_code(code){
