@@ -1,7 +1,6 @@
 'use strict';
 
 function fetch_keyinfo(key){
-    core_storage_save();
     const code = key.charCodeAt(0);
 
     core_elements.key_single.innerHTML =
@@ -15,16 +14,14 @@ function fetch_keyinfo_code(code){
 }
 
 function generate_list(){
-    core_storage_save();
-
-    let loop_counter = core_storage_data.code_range - 1;
+    let loop_counter = core_elements.code_range.value - 1;
     if(loop_counter < 0){
         return;
     }
 
     const keys = [];
     do{
-        const code = core_storage_data.base_code + loop_counter;
+        const code = core_elements.base_code.value + loop_counter;
         const char = String.fromCharCode(code);
 
         keys.splice(
@@ -88,16 +85,12 @@ function repo_init(){
           },
         },
       },
-      'storage': {
-        'base_code': 0,
-        'code': 72,
-        'code_range': 100,
-        'key': 'H',
-      },
       'title': 'TextInfo.htm',
       'ui_elements': [
+        'base_code',
         'characters',
         'code',
+        'code_range',
         'key',
         'key_list',
         'key_single',
