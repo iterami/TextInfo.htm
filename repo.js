@@ -14,23 +14,18 @@ function fetch_keyinfo_code(code){
 }
 
 function generate_list(){
-    let loop_counter = core_elements.code_range.value - 1;
-    if(loop_counter < 0){
+    if(core_elements.code_range.value < 1){
         return;
     }
 
     const keys = [];
-    do{
-        const code = core_elements.base_code.value + loop_counter;
+    for(let i =  0; i < core_elements.code_range.value; i++){
+        const code = core_elements.base_code.value + i;
         const char = String.fromCharCode(code);
-
-        keys.splice(
-          0,
-          0,
+        keys.push(
           '<a href="javascript:fetch_keyinfo_code(' + code + ');" style="border:1px solid #aaa;display:inline-block;height:1em;text-decoration:none;width:25px">' + char + '</a>'
         );
-    }while(loop_counter--);
-
+    }
     core_elements.key_list.innerHTML = keys.join(' ');
 }
 
