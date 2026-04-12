@@ -1,18 +1,5 @@
 'use strict';
 
-function fetch_keyinfo(key){
-    const code = key.charCodeAt(0);
-
-    core_elements.key_single.innerHTML =
-      '<span class=medium>' + key + '</span>'
-        + '<br>Code: ' + code
-        + '<br>Hex: ' + code.toString(16).toUpperCase();
-}
-
-function fetch_keyinfo_code(code){
-    fetch_keyinfo(String.fromCharCode(code));
-}
-
 function generate_list(){
     if(core_elements.code_range.value < 1){
         return;
@@ -23,27 +10,40 @@ function generate_list(){
         const code = core_elements.base_code.value + i;
         const char = String.fromCharCode(code);
         keys.push(
-          '<a href="javascript:fetch_keyinfo_code(' + code + ');" style="border:1px solid #aaa;display:inline-block;height:1em;text-decoration:none;width:25px">' + char + '</a>'
+          '<a href="javascript:keyinfo_code(' + code + ');" style="border:1px solid #aaa;display:inline-block;height:1em;text-decoration:none;width:25px">' + char + '</a>'
         );
     }
     core_elements.key_list.innerHTML = keys.join(' ');
 }
 
+function keyinfo(key){
+    const code = key.charCodeAt(0);
+
+    core_elements.key_single.innerHTML =
+      '<span class=medium>' + key + '</span>'
+        + '<br>Code: ' + code
+        + '<br>Hex: ' + code.toString(16).toUpperCase();
+}
+
+function keyinfo_code(code){
+    keyinfo(String.fromCharCode(code));
+}
+
 function repo_init(){
     core_repo_init({
       'events': {
-        'fetch_keyinfo_key': {
-          'onclick': function(){
-              fetch_keyinfo(core_elements.key.value);
-          },
-        },
-        'fetch_keyinfo_code': {
-          'onclick': function(){
-              fetch_keyinfo_code(core_elements.code.value);
-          },
-        },
         'generate': {
           'onclick': generate_list,
+        },
+        'keyinfo_key': {
+          'onclick': function(){
+              keyinfo(core_elements.key.value);
+          },
+        },
+        'keyinfo_code': {
+          'onclick': function(){
+              keyinfo_code(core_elements.code.value);
+          },
         },
         'text': {
           'oninput': function(){
